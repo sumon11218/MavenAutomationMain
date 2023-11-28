@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel= "none" >
+    <test name="ChromeBrowser_Test">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="Day14_040923.T1_Staples_XpathByIndex">
+            </class>
+        </classes>
+    </test>
+    <test name="FirefoxTest_Test">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Day14_040923.T1_Staples_XpathByIndex">
+            </class>
+        </classes>
+    </test>
+</suite>
