@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class T2_Google extends ReusableAnnotations_CrossBrowser {
 
     @Test(priority = 1)
-    public void searchForCricket(){
+    public void CaptureSearchNumberForCricketOnGoogle(){
         //navigate to google home
         logger.log(LogStatus.INFO,"Navigate to Google Home page");
         driver.navigate().to("https://www.google.com");
@@ -17,10 +17,6 @@ public class T2_Google extends ReusableAnnotations_CrossBrowser {
         ReusableMethodsLoggers.sendKeysMethod(driver,"//*[@name='q']","cricket",logger,"Search Field");
         //hit submit on google search
         ReusableMethodsLoggers.submitMethod(driver,"//*[@name='btnK']",logger,"Google Search Button");
-    }//end of test 1
-
-    @Test(dependsOnMethods = "searchForCricket")
-    public void printOutSearchNumber(){
         //capture the search result
         String result = ReusableMethodsLoggers.getTextMethod(driver,"//*[@id='result-stats']",logger,"Search Results");
         logger.log(LogStatus.INFO,"Search Results: " + result);
@@ -29,6 +25,6 @@ public class T2_Google extends ReusableAnnotations_CrossBrowser {
         logger.log(LogStatus.INFO,"Search number for cricket: " + arrayResult[1]);
         //testing for github
         //testing
-    }//end of test 2
+    }//end of test
 
 }
