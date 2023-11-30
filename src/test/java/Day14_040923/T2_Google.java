@@ -19,7 +19,7 @@ public class T2_Google extends ReusableAnnotations_CrossBrowser {
         ReusableMethodsLoggers.submitMethod(driver,"//*[@name='btnK']",logger,"Google Search Button");
     }//end of test 1
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = "searchForCricket")
     public void printOutSearchNumber(){
         //capture the search result
         String result = ReusableMethodsLoggers.getTextMethod(driver,"//*[@id='result-stats']",logger,"Search Results");
