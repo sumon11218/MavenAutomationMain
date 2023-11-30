@@ -29,10 +29,11 @@ public class ReusableMethodsLoggers {
         ChromeOptions options = new ChromeOptions();
 
         options.addArguments("start-maximized");
-        //options.addArguments("incognito");
-        options.addArguments("headless");
+        options.addArguments("--incognito");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
         //set up option variable inside chrome driver for it to recognize your conditions
