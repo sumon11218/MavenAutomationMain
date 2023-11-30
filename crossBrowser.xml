@@ -4,16 +4,14 @@
     <test name="ChromeBrowser_Test">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="Day14_040923.T1_Staples_XpathByIndex">
-            <class name="Day14_040923.T2_Google">
-            </class>
+            <class name="Day14_040923.T1_Staples_XpathByIndex"/>
+            <class name="Day14_040923.T2_Google"/>
         </classes>
     </test>
     <test name="FirefoxBrowser_Test">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="Day14_040923.T1_Staples_XpathByIndex">
-            </class>
+            <class name="Day14_040923.T1_Staples_XpathByIndex"/>
         </classes>
     </test>
 </suite>
