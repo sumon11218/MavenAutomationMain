@@ -30,12 +30,8 @@ public class ReusableMethodsLoggers {
 
         options.addArguments("start-maximized");
         options.addArguments("--incognito");
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
+        //options.addArguments("--headless");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-
         //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
 
