@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class T2_Google extends ReusableAnnotations_CrossBrowser {
 
     @Test(priority = 1)
-    public void CaptureSearchNumberForCricketOnGoogle(){
+    public void CaptureGoogleSearchNumberForCricket(){
         //navigate to google home
         logger.log(LogStatus.INFO,"Navigate to Google Home page");
         driver.navigate().to("https://www.google.com");
