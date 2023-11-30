@@ -8,11 +8,4 @@
             </class>
         </classes>
     </test>
-    <test name="FirefoxTest_Test">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="Day14_040923.T1_Staples_XpathByIndex">
-            </class>
-        </classes>
-    </test>
 </suite>
