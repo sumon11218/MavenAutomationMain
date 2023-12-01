@@ -16,8 +16,8 @@
         </classes>
     </test>
 
-    <test name="EdgeBrowser_Test">
-        <parameter name="browser" value="edge"/>
+    <test name="SafariBrowser_Test">
+        <parameter name="browser" value="safari"/>
         <classes>
             <class name="Day14_040923.T1_Staples_XpathByIndex"/>
             <class name="Day14_040923.T2_Google"/>
