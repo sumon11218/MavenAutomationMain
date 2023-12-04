@@ -27,11 +27,10 @@ public class ReusableMethodsLoggers {
 
         //set up your chrome options arguments for your web driver
         ChromeOptions options = new ChromeOptions();
-
         options.addArguments("start-maximized");
         options.addArguments("incognito");
-        options.addArguments("--headless");
-        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+        options.addArguments("headless");
+        //options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
 
