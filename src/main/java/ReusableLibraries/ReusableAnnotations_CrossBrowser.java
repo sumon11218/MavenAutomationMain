@@ -6,6 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
@@ -48,6 +49,12 @@ public class ReusableAnnotations_CrossBrowser {
             case "safari":
                 WebDriverManager.safaridriver().setup();
                 driver = new SafariDriver();
+                driver.manage().window().maximize();
+                break;
+            case "opera":
+                //WebDriverManager.operadriver().setup();
+                System.setProperty("webdriver.opera.driver","src/main/resources/OperaDriver");
+                driver = new OperaDriver();
                 driver.manage().window().maximize();
                 break;
         }//end of switch case statements

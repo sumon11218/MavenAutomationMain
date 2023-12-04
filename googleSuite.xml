@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression">
     <test name="ChromeBrowser_Test">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="opera"></parameter>
         <classes>
             <class name="Day14_040923.T2_Google">
             </class>
