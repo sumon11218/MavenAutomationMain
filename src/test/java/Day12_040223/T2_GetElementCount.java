@@ -1,6 +1,6 @@
 package Day12_040223;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class T2_GetElementCount extends ReusableAnnotations {
+public class T2_GetElementCount extends TestParent {
 
     @Test
     public void navListCount(){

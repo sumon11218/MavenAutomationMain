@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestSuite" parallel= "none" >
+<suite name="TestSuite" parallel= "none">
     <test name="ChromeBrowser_Test">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="Day14_040923.T1_Staples_XpathByIndex"/>
-            <class name="Day14_040923.T2_Google"/>
+            <class name="Day14_040923.T2_Google_Test"/>
+        </classes>
+    </test>
+    <test name="FirefoxBrowser_Test" >
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="Day14_040923.T2_Google_Test"/>
         </classes>
     </test>
 </suite>

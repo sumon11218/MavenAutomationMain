@@ -7,10 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ReusableAnnotations_CrossBrowser {
 
@@ -30,16 +35,16 @@ public class ReusableAnnotations_CrossBrowser {
     //call before method annotation to capture each test name dynamically and cross browser(s)
     @BeforeMethod
     @Parameters("browser")
-    public void getTestName(Method testName, String browser){
+    public void getTestName(Method testName, String browser) throws MalformedURLException {
         logger = reports.startTest(testName.getName() + "_"+browser);
         switch (browser){
             case "chrome" :
+                WebDriverManager.chromedriver().setup();
                 driver = ReusableMethodsLoggers.defineChromeDriver();
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                driver.manage().window().maximize();
+                driver = ReusableMethodsLoggers.defineChromeDriver();
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();

@@ -1,13 +1,13 @@
 package Day12_040223;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class T1_ReusableAnnotations_Yahoo extends ReusableAnnotations {
+public class T1_ReusableAnnotations_Yahoo extends TestParent {
 
     @Test
     public void navigate() {

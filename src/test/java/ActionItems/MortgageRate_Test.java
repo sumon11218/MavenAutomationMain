@@ -1,6 +1,5 @@
 package ActionItems;
 
-import ReusableLibraries.ReusableAnnotations;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,7 +22,7 @@ public class MortgageRate_Test {
         WebDriverManager.chromedriver().setup();
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setBrowserName(BrowserType.CHROME);
-        driver = new RemoteWebDriver(new URL("http://ec2-54-166-173-219.compute-1.amazonaws.com:4444/wd/hub"),cap);
+        driver = new RemoteWebDriver(new URL("http://54.237.88.48:4444/wd/hub"),cap);
     }
     @Test
     public void mortageRate() throws InterruptedException {

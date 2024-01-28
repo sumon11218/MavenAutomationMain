@@ -1,14 +1,13 @@
 package Day12_040223;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class T3_BooleanStatement extends ReusableAnnotations {
+public class T3_BooleanStatement extends TestParent {
 
     @Test
     public void verifyCheckBoxIsChecked() {

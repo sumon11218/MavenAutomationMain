@@ -1,12 +1,11 @@
 package Day13_040823;
 
-import ReusableLibraries.ReusableAnnotations;
-import ReusableLibraries.ReusableMethods;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethodsLoggers;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
-public class T2_Staples_ReusableMethods_Loggers extends ReusableAnnotations {
+public class T2_Staples_ReusableMethods_Loggers extends TestParent {
 
     @Test
     public void searchStaplesForKeyword() throws InterruptedException {

@@ -1,6 +1,6 @@
 package Practice;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethodsLoggers;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -14,7 +14,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class mlcalc_datadriver_test extends ReusableAnnotations {
+public class mlcalc_datadriver_test extends TestParent {
     @Test
     public void GetMonthlyPaymentTest() throws BiffException, IOException, InterruptedException, WriteException {
         //read the data from the read excel file

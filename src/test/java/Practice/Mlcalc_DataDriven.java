@@ -1,8 +1,7 @@
 package Practice;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethodsLoggers;
-import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 import jxl.write.Label;
@@ -13,12 +12,9 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
-import static java.awt.SystemColor.desktop;
-
-public class Mlcalc_DataDriven extends ReusableAnnotations {
+public class Mlcalc_DataDriven extends TestParent {
 
     @Test
     public void getMonthlyPayment() throws BiffException, IOException, InterruptedException, WriteException {

@@ -1,10 +1,10 @@
 package ActionItems;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethods;
 import org.testng.annotations.Test;
 
-public class W6_AI6 extends ReusableAnnotations {
+public class W6_AI6 extends TestParent {
 
     @Test
     public void TC1() throws InterruptedException {

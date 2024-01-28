@@ -12,6 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -270,6 +273,24 @@ public class ReusableMethodsLoggers {
         }//end of exception
     }//end of scroll by pixel 1 method
 
+    //scroll into view method
+    public static void sendkeysByJse(WebDriver driver, String xpath, String userValue, ExtentTest logger, String elementName) {
+        //declare explicit wait statement
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        try {
+            WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+            jse.executeScript("arguments[0].value='"+userValue+"';", element);
+            System.out.println("Successfully scrolled into view " + elementName);
+            logger.log(LogStatus.PASS, "Successfully entered value using JSE on " + elementName);
+        } catch (Exception e) {
+            System.out.println("Unable to scroll into view " + elementName + ": " + e);
+            logger.log(LogStatus.FAIL, "Unable to enter value using JSE on " + elementName + ": " + e);
+            getScreenShot(driver, elementName, logger);
+        }//end of exception
+    }//end of scroll into view sendkeysByJse
+
+
 
     /*
     //scroll by pixel 1 method
@@ -348,7 +369,41 @@ public class ReusableMethodsLoggers {
             logger.log(LogStatus.FAIL, "Error Occurred while taking SCREENSHOT!!! " + e);
         }//end of exception
     }//end of get screenshot method
-//hi
 
+    //verify element
+    public static WebElement returnElement(WebDriver driver, String xpath, ExtentTest logger, String elementName) {
+        //declare explicit wait statement
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = null;
+        try {
+            element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+            System.out.println("Successfully verified element " + elementName);
+            logger.log(LogStatus.PASS, "Successfully verified element " + elementName);
+        } catch (Exception e) {
+            System.out.println("Unable to locate element " + elementName + ": " + e);
+            logger.log(LogStatus.FAIL, "Unable to locate element " + elementName + ": " + e);
+            getScreenShot(driver, elementName, logger);
+        }//end of exception
+        return element;
+    }//end of click method
 
+    public static void uploadFileUsingRobot(String filePath){
+        try{
+            //File Need to be imported
+            File file = new File(filePath);
+            StringSelection stringSelection = new StringSelection(file.getAbsolutePath());
+            //Copy to clipboard
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+            //native key strokes for CTRL, V and ENTER keys
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        } catch (Exception exp) {
+            exp.printStackTrace();
+        }
+    }//end of uploadFileUsingRobot
 }//end of class

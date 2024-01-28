@@ -1,13 +1,11 @@
 package ActionItems;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethodsLoggers;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-
-public class W7_AI7 extends ReusableAnnotations {
+public class W7_AI7 extends TestParent {
 
     @Test(priority = 1)
     public void TC_01_NavigateToUnitedAirlines() {

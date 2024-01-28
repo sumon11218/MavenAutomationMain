@@ -1,10 +1,10 @@
 package ActionItems;
 
-import ReusableLibraries.ReusableAnnotations;
+import ReusableLibraries.TestParent;
 import ReusableLibraries.ReusableMethodsLoggers;
 import org.testng.annotations.Test;
 
-public class Zain_AI08_02 extends ReusableAnnotations {
+public class Zain_AI08_02 extends TestParent {
 
     @Test
     public void tc001_searchForBoatsLoans(){

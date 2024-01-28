@@ -2,7 +2,7 @@ package ReusableLibraries;
 
 import org.testng.annotations.Test;
 
-public class TestingReusableMethods extends ReusableAnnotations {
+public class TestingReusableMethods extends TestParent {
 
     @Test
     public void mortgage() throws InterruptedException {

@@ -1,14 +1,9 @@
 package Day14_040923;
 
-import Day13_040823.T2_Staples_ReusableMethods_Loggers;
-import ReusableLibraries.ReusableAnnotations;
 import ReusableLibraries.ReusableAnnotations_CrossBrowser;
 import ReusableLibraries.ReusableMethodsLoggers;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
-
-import static ReusableLibraries.ReusableAnnotations.driver;
-import static ReusableLibraries.ReusableAnnotations.logger;
 
 public class T1_Staples_XpathByIndex extends ReusableAnnotations_CrossBrowser {
 
