@@ -26,13 +26,15 @@ public class ReusableMethodsLoggers {
     //create a return method to return your web driver you are going to use on your test classes
     //static command allows your method to be global
     public static WebDriver defineChromeDriver() {
-        WebDriverManager.chromedriver().setup();
-
-        //set up your chrome options arguments for your web driver
+        //WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_linux");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("start-maximized"); // open Browser in maximized mode
+        options.addArguments("disable-infobars"); // disabling infobars
+        options.addArguments("--disable-extensions"); // disabling extensions
+        options.addArguments("--disable-gpu"); // applicable to windows os only
+        options.addArguments("--no-sandbox"); // Bypass OS security model
         options.setHeadless(true);
          //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
