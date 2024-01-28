@@ -1,24 +1,19 @@
-image: markhobson/maven-chrome
+image: markhobson/maven-chrome:jdk-17
 
 stages:
+  - build
   - test
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
-test:
-  stage: test
-  allow_failure: true
-
-  # Run the tests
+build:
+  stage: build
   script:
     - mvn $MAVEN_OPTS clean package
-    - mvn compile test
+    - mvn compile
 
-  # Store artifacts
-  artifacts:
-    when: always
-    name: "report"
-    paths:
-      - target/surefire-reports/*
-    expire_in: 1 h
+test:
+  stage: test
+  script:
+    - mvn test
