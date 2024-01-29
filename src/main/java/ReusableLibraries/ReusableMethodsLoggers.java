@@ -29,6 +29,7 @@ public class ReusableMethodsLoggers {
         WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_linux");
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-debugging-pipe'");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("start-maximized"); // open Browser in maximized mode
         options.addArguments("disable-infobars"); // disabling infobars
