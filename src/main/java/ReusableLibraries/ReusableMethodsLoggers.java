@@ -17,6 +17,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ReusableMethodsLoggers {
 
@@ -27,16 +28,21 @@ public class ReusableMethodsLoggers {
     //static command allows your method to be global
     public static WebDriver defineChromeDriver() {
         WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_linux");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-debugging-pipe'");
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("start-maximized"); // open Browser in maximized mode
-        options.addArguments("disable-infobars"); // disabling infobars
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        options.addArguments("--headless"); // open headless browser
+        options.addArguments("--start-maximized"); // open browser in maximized mode
+        options.addArguments("--window-size=1920,1080"); // browser resolution
+        options.addArguments("--enable-automation");
+        options.addArguments("--disable-infobars"); // disabling infobars
         options.addArguments("--disable-extensions"); // disabling extensions
         options.addArguments("--disable-gpu"); // applicable to windows os only
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.setHeadless(true);
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--no-sandbox"); // bypass OS security model
+        options.addArguments("--disable-browser-side-navigation");
+        options.addArguments("--whitelisted-ips"); // bypass whitelisted ips
+        options.setExperimentalOption("excludeSwitches", new ArrayList(Arrays.asList("disable-popup-blocking"))); // disable Pop-ups
+        options.setAcceptInsecureCerts(true); // bypass SSL certs
          //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
 
