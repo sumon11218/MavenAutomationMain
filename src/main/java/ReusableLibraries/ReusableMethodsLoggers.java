@@ -29,23 +29,11 @@ public class ReusableMethodsLoggers {
     public static WebDriver defineChromeDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        options.addArguments("--headless"); // open headless browser
-        options.addArguments("--start-maximized"); // open browser in maximized mode
-        options.addArguments("--window-size=1920,1080"); // browser resolution
-        options.addArguments("--enable-automation");
-        options.addArguments("--disable-infobars"); // disabling infobars
-        options.addArguments("--disable-extensions"); // disabling extensions
-        options.addArguments("--disable-gpu"); // applicable to windows os only
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--no-sandbox"); // bypass OS security model
-        options.addArguments("--disable-browser-side-navigation");
-        options.addArguments("--whitelisted-ips"); // bypass whitelisted ips
-        options.setExperimentalOption("excludeSwitches", new ArrayList(Arrays.asList("disable-popup-blocking"))); // disable Pop-ups
-        options.setAcceptInsecureCerts(true); // bypass SSL certs
-         //set up option variable inside chrome driver for it to recognize your conditions
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
-
         return driver;
     }//end of web driver method
     //return method will execute your statement along with returning conditions/value
