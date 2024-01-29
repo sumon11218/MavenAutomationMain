@@ -1,5 +1,6 @@
 package ActionItems;
 
+import ReusableLibraries.ReusableMethodsLoggers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,9 +22,7 @@ public class MortgageRate_Test {
     @BeforeMethod
     public void setDriver() throws MalformedURLException {
         WebDriverManager.chromedriver().setup();
-        DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setBrowserName(BrowserType.CHROME);
-        driver = new RemoteWebDriver(new URL("http://54.237.88.48:4444/wd/hub"),cap);
+        driver = ReusableMethodsLoggers.defineChromeDriver();
     }
     @Test
     public void mortageRate() throws InterruptedException {
@@ -52,4 +52,9 @@ public class MortgageRate_Test {
 
         Thread.sleep(5000);
     }//end o test
+
+    @AfterMethod
+    public void quitSession(){
+        driver.quit();
+    }//end of after method
 }//end of class
