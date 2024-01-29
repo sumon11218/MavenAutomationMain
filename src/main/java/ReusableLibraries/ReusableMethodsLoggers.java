@@ -26,8 +26,8 @@ public class ReusableMethodsLoggers {
     //create a return method to return your web driver you are going to use on your test classes
     //static command allows your method to be global
     public static WebDriver defineChromeDriver() {
-        //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_linux");
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_linux");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("start-maximized"); // open Browser in maximized mode
