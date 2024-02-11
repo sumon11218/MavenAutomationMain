@@ -27,14 +27,11 @@ public class ReusableMethodsLoggers {
     //create a return method to return your web driver you are going to use on your test classes
     //static command allows your method to be global
     public static WebDriver defineChromeDriver() {
-        WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
+        //WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-debugging-port=9222");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
         //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
         return driver;
