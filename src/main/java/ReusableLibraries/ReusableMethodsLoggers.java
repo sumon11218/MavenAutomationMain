@@ -32,6 +32,7 @@ public class ReusableMethodsLoggers {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         //set up option variable inside chrome driver for it to recognize your conditions
         WebDriver driver = new ChromeDriver(options);
         return driver;
